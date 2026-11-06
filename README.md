@@ -7,6 +7,7 @@ Reusable Claude Code skills by alxn0, packaged as a plugin.
 | `chat` | `/chat` | Read-only discussion mode: read files, search the web, no code changes |
 | `go` | `/go` | Finisher: simplify, test end-to-end, code-review. No commit |
 | `python` | auto on `*.py` | Python conventions and tooling (uv, ruff, ty, polars) |
+| `ship` | `/ship` | One commit, then push to the allowed branch or open a PR |
 | `wait` | `/wait` | Present a plan and wait for confirmation before implementing |
 | `whereami` | `/whereami` | Print `user@host:cwd` of the session |
 
