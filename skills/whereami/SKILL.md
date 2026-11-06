@@ -4,6 +4,8 @@ description: Print user@host:working_directory of the current session. Slash-com
 disable-model-invocation: true
 ---
 
-Reply with exactly the line below, in a code span, and nothing else:
+Reply with exactly `USER@HOST:DIR` in a code span, and nothing else, where:
 
-!`echo "$(whoami)@$(hostname -s):${PWD/#$HOME/\~}"`
+- USER is !`whoami`
+- HOST is !`hostname -s`
+- DIR is !`pwd`, with the home directory prefix written as `~`
