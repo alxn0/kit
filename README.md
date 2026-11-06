@@ -5,7 +5,7 @@ Reusable Claude Code skills by alxn0, packaged as a plugin.
 | Skill | Trigger | Does |
 |---|---|---|
 | `chat` | `/chat` | Read-only discussion mode: read files, search the web, no code changes |
-| `go` | `/go` | Finisher: verify end-to-end, simplify, commit, then push or open a PR |
+| `go` | `/go` | Finisher: simplify, test end-to-end, code-review. No commit |
 | `python` | auto on `*.py` | Python conventions and tooling (uv, ruff, ty, polars) |
 | `wait` | `/wait` | Present a plan and wait for confirmation before implementing |
 | `whereami` | `/whereami` | Print `user@host:cwd` of the session |
