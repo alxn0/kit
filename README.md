@@ -8,6 +8,7 @@ Reusable Claude Code skills by alxn0, packaged as a plugin.
 | `go` | `/go` | Finisher: simplify, test end-to-end, code-review. No commit |
 | `python` | auto on `*.py` | Python conventions and tooling (uv, ruff, ty, polars) |
 | `ship` | `/ship` | One commit, then push to the allowed branch or open a PR |
+| `todo` | `/todo`, auto | Track open items in a managed `TODO.md`: init, convert, add, check. A hook checks the format after each edit |
 | `wait` | `/wait` | Present a plan and wait for confirmation before implementing |
 | `whereami` | `/whereami` | Print `user@host:cwd` of the session |
 
