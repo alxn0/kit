@@ -16,8 +16,8 @@ discussed in this session.
 
 1. **Draft** the brief following `${CLAUDE_SKILL_DIR}/brief.md`, from this session:
    decisions with their reasons, what was ruled out, commits and files. Write it for a
-   reader with no access to this session. Ask the user for the receiver's `project`
-   path if the session does not make it clear.
+   reader with no access to this session. Set `project` only when the work belongs
+   to a project on the receiver; ask the user if unclear.
 2. **Show** the full brief and wait for the user's approval. Apply their changes and
    show it again until approved.
 3. **Write** it to `/tmp/handoff/<YYYY-MM-DD>-<slug>.md`.

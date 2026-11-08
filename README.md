@@ -7,7 +7,7 @@ Reusable Claude Code skills by alxn0, packaged as a plugin.
 | `chat` | `/chat` | Read-only discussion mode: read files, search the web, no code changes |
 | `go` | `/go` | Finisher: simplify, test end-to-end, code-review. No commit |
 | `handoff` | `/handoff <target>` | Draft a self-contained brief of the session, approve it, copy it to `<target>:inbox/` |
-| `inbox` | `/inbox` | Turn a received brief into `TODO.md` items in its project, then file it |
+| `inbox` | `/inbox` | Plan and do a received brief with approval, then delete it or queue what is left |
 | `python` | auto on `*.py` | Python conventions and tooling (uv, ruff, ty, polars) |
 | `ship` | `/ship` | One commit, then push to the allowed branch or open a PR |
 | `todo` | `/todo`, auto | Track open items in a managed `TODO.md`: init, convert, add, check. A hook checks the format after each edit |

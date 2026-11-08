@@ -9,7 +9,7 @@ The receiver has none of the sender's context: the brief must stand alone.
 ---
 from: <sender hostname>
 date: <YYYY-MM-DD>
-project: <path of the project on the receiver, e.g. ~/GitHub/owner/repo>
+project: <optional: path of the project on the receiver, e.g. ~/GitHub/owner/repo>
 ---
 # <Title: the work, imperative>
 
@@ -29,5 +29,6 @@ What was decided and why, what was ruled out. Links: commits, files, repos, URLs
 - ? A question, with the recommended answer when there is one.
 ```
 
-- `project` and every section are required; `Open questions` may say `None`.
+- Every section is required; `Open questions` may say `None`.
+- `project` is optional: omit the line when the work belongs to no project.
 - Paths are as seen on the receiver. Never include secrets or tokens.

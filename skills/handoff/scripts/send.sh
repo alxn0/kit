@@ -11,7 +11,7 @@ set -euo pipefail
 
 readonly TARGET_PATTERN='^([A-Za-z0-9._-]+@)?[A-Za-z0-9][A-Za-z0-9._-]*$'
 readonly BRIEF_NAME_PATTERN='^[0-9]{4}-[0-9]{2}-[0-9]{2}-[a-z0-9]+(-[a-z0-9]+)*\.md$'
-readonly REQUIRED_LINES=("project: " "## Goal" "## Context" "## Tasks" "## Done when" "## Open questions")
+readonly REQUIRED_LINES=("## Goal" "## Context" "## Tasks" "## Done when" "## Open questions")
 
 fail() { echo "send.sh: $1" >&2; exit 1; }
 
