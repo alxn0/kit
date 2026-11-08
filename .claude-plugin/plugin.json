@@ -1,6 +1,6 @@
 {
   "name": "kit",
-  "description": "alxn0's reusable Claude Code skills: chat, go, python, ship, todo, wait, whereami.",
+  "description": "alxn0's reusable Claude Code skills: chat, go, handoff, inbox, python, ship, todo, wait, whereami.",
   "author": { "name": "alxn0" },
   "repository": "https://github.com/alxn0/kit",
   "license": "MIT"
