@@ -49,7 +49,8 @@ unasked.
 
 - Sections in this order: `You`, `Now`, `Next`, `Later`. Empty ones may stay or go.
 - One line per item, as an instruction or a question. Longer detail goes in a separate
-  note file that the item links to.
+  note file that the item links to. The note follows the TODO's tracking: `docs/` when
+  `TODO.md` is version-controlled, `tmp/` when it is not.
 - `You` items start with `?` (question, with the recommended answer when there is one)
   or `!` (action).
 - `Now` holds one item at most.
@@ -71,7 +72,8 @@ unasked.
   on. An unanswered question goes under `You` before the session ends.
 - **Answer:** the user answers on the item's line (`→ yes`), ticks it (`[x]`), or answers
   in the session. Act on it, then delete the item.
-- **Finish:** delete the item; if it was `Now`, move the first `Next` item up.
+- **Finish:** delete the item; if it was `Now`, move the first `Next` item up. Delete
+  its note file too, after moving any lasting content to `README.md` or `ARCHITECTURE.md`.
 - **Reorder:** move items when priorities change. Never reword the user's items.
 - **Check / fix:** `todo.sh check [file]` prints each format error with its line number
   and lists ticked items waiting for removal. Fix by hand, keeping the wording, and
