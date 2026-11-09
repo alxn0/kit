@@ -1,7 +1,7 @@
 ---
 name: handoff
-description: Hand work from this session over to another machine's agent - draft a self-contained brief, show it for approval, then copy it to the target's ~/inbox/. Manual trigger only.
-argument-hint: "<target: ssh alias or user@host> [what to hand over]"
+description: Hand work from this session over to another machine's agent - draft a self-contained brief, show it for approval, then copy it to the target's ~/inbox/, or stage it in local ~/send/ for the target to pull. Manual trigger only.
+argument-hint: "<target: ssh alias, user@host or --local> [what to hand over]"
 disable-model-invocation: true
 allowed-tools: Bash(${CLAUDE_SKILL_DIR}/scripts/send.sh *)
 ---
@@ -10,8 +10,9 @@ allowed-tools: Bash(${CLAUDE_SKILL_DIR}/scripts/send.sh *)
 
 Request: $ARGUMENTS
 
-The first argument is the target: an ssh alias (`dixie`) or `user@host`, no path. No
-target: ask for it and stop. The rest says what to hand over; empty means the work
+The first argument is the target: an ssh alias (`dixie`) or `user@host`, no path; or
+`--local` when this machine cannot reach the receiver: the brief is staged in `~/send/`
+and the receiver pulls it. No target: ask for it and stop. The rest says what to hand over; empty means the work
 discussed in this session.
 
 1. **Draft** the brief following `${CLAUDE_SKILL_DIR}/brief.md`, from this session:
@@ -23,4 +24,5 @@ discussed in this session.
 3. **Write** it to `/tmp/handoff/<YYYY-MM-DD>-<slug>.md`.
 4. **Send:** `${CLAUDE_SKILL_DIR}/scripts/send.sh <target> <file>`. On failure, relay
    the message and stop; never retry with another target or path.
-5. Report the file name and target. The receiver processes it with `/inbox`.
+5. Report the file name and target; with `--local`, also the pull command the script
+   prints. The receiver processes it with `/inbox`.
