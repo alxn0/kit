@@ -24,5 +24,5 @@ discussed in this session.
 3. **Write** it to `/tmp/handoff/<YYYY-MM-DD>-<slug>.md`.
 4. **Send:** `${CLAUDE_SKILL_DIR}/scripts/send.sh <target> <file>`. On failure, relay
    the message and stop; never retry with another target or path.
-5. Report the file name and target; with `--local`, also the pull command the script
+5. Report the file name and target; with `--local`, also the pull commands the script
    prints. The receiver processes it with `/inbox`.

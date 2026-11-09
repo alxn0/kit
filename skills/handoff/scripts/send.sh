@@ -39,7 +39,11 @@ if [[ $target == "$LOCAL_TARGET" ]]; then
   [[ ! -e $SEND_DIR/$brief_name ]] || fail "$SEND_DIR/$brief_name already exists"
   cp -- "$brief" "$SEND_DIR/"
   echo "staged $brief_name in $SEND_DIR/"
-  echo "on the receiver: scp $(whoami)@$(hostname):send/$brief_name ~/inbox/"
+  source_path="$(whoami)@$(hostname):send/$brief_name"
+  echo "on the receiver, move it to the inbox with:"
+  echo "  rsync --remove-source-files $source_path ~/inbox/"
+  echo "or, without rsync, copy it with:"
+  echo "  scp $source_path ~/inbox/"
   exit 0
 fi
 
