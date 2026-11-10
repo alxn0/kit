@@ -9,7 +9,6 @@ Reusable Claude Code skills by alxn0, packaged as a plugin.
 | `handoff` | `/handoff <target>` | Draft a self-contained brief of the session, approve it, copy it to `<target>:inbox/`, or with `--local` stage it in `~/send/` for the receiver to pull |
 | `inbox` | `/inbox` | Plan and do a received brief with approval, then delete it or queue what is left |
 | `python` | auto on `*.py` | Python conventions and tooling (uv, ruff, ty, polars) |
-| `ship` | `/ship` | One commit, then push to the allowed branch or open a PR |
 | `wait` | `/wait` | Present a plan and wait for confirmation before implementing |
 | `whereami` | `/whereami` | Print `user@host:cwd` of the session |
 
