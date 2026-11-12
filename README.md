@@ -11,6 +11,7 @@ A shared Claude Code plugin marketplace of small utilities. Enable only the plug
 | | `wait` | `/wait` | Present a plan and wait for confirmation before implementing |
 | | `go` | `/go` | Finisher: simplify, test end-to-end, code-review. No commit |
 | `coding` | `python` | auto on `*.py` | Python conventions and tooling (uv, ruff, ty, polars) |
+| | `golang` | auto on `*.go` | Go conventions and tooling (mise, gofmt, go vet, staticcheck) |
 
 ## Install
 

@@ -1,6 +1,6 @@
 {
   "name": "coding",
-  "description": "Language and coding conventions: python.",
+  "description": "Language and coding conventions: python, golang.",
   "author": { "name": "alxn0" },
   "repository": "https://github.com/alxn0/toolshed",
   "license": "MIT"
