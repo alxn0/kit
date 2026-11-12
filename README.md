@@ -1,33 +1,56 @@
-# kit
+# toolshed
 
-Reusable Claude Code skills by alxn0, packaged as a plugin.
+A shared Claude Code plugin marketplace of small utilities. Enable only the plugins you want.
 
-| Skill | Trigger | Does |
-|---|---|---|
-| `chat` | `/chat` | Read-only discussion mode: read files, search the web, no code changes |
-| `go` | `/go` | Finisher: simplify, test end-to-end, code-review. No commit |
-| `handoff` | `/handoff <target>` | Draft a self-contained brief of the session, approve it, copy it to `<target>:inbox/`, or with `--local` stage it in `~/send/` for the receiver to pull |
-| `inbox` | `/inbox` | Plan and do a received brief with approval, then delete it or queue what is left |
-| `python` | auto on `*.py` | Python conventions and tooling (uv, ruff, ty, polars) |
-| `wait` | `/wait` | Present a plan and wait for confirmation before implementing |
-| `whereami` | `/whereami` | Print `user@host:cwd` of the session |
+| Plugin | Skill | Trigger | Does |
+|---|---|---|---|
+| `relay` | `handoff` | `/handoff <target>` | Draft a self-contained brief of the session, approve it, copy it to `<target>:inbox/`, or with `--local` stage it in `~/send/` for the receiver to pull |
+| | `inbox` | `/inbox` | Plan and do a received brief with approval, then delete it or queue what is left |
+| | `whereami` | `/whereami` | Print `user@host:cwd` of the session |
+| `modes` | `chat` | `/chat` | Read-only discussion mode: read files, search the web, no code changes |
+| | `wait` | `/wait` | Present a plan and wait for confirmation before implementing |
+| | `go` | `/go` | Finisher: simplify, test end-to-end, code-review. No commit |
+| `coding` | `python` | auto on `*.py` | Python conventions and tooling (uv, ruff, ty, polars) |
 
 ## Install
 
-Add to `~/.claude/settings.json`:
+Add to `~/.claude/settings.json`, keeping only the plugins you want:
 
 ```json
 {
   "extraKnownMarketplaces": {
-    "alxn0": { "source": { "source": "github", "repo": "alxn0/kit" }, "autoUpdate": true }
+    "toolshed": { "source": { "source": "github", "repo": "alxn0/toolshed" }, "autoUpdate": true }
   },
-  "enabledPlugins": { "kit@alxn0": true }
+  "enabledPlugins": {
+    "relay@toolshed": true,
+    "modes@toolshed": true,
+    "coding@toolshed": true
+  }
 }
 ```
 
-Or from the CLI: `claude plugin marketplace add alxn0/kit && claude plugin install kit@alxn0`.
+Or from the CLI:
 
-Skills answer to their bare name (`/go`) unless another skill uses it; then use `/kit:go`.
+```bash
+claude plugin marketplace add alxn0/toolshed
+claude plugin install relay@toolshed   # repeat per plugin
+```
+
+Skills answer to their bare name (`/go`) unless another skill uses it; then use `/<plugin>:<skill>`,
+e.g. `/modes:go`.
+
+## Layout
+
+```
+.claude-plugin/marketplace.json   lists every plugin
+plugins/<plugin>/
+  .claude-plugin/plugin.json      plugin manifest
+  skills/<skill>/SKILL.md         one folder per skill
+```
+
+To add a plugin: create `plugins/<plugin>/` with that layout, then add it to `marketplace.json`.
+To add a skill to an existing plugin: add `plugins/<plugin>/skills/<skill>/` and list it in the
+plugin's `description`.
 
 ## Develop
 
@@ -35,8 +58,9 @@ Register the local clone instead of GitHub; it is loaded in place, so edits appl
 after `/reload-plugins`:
 
 ```bash
-claude plugin marketplace add ~/GitHub/alxn0/kit
-claude plugin install kit@alxn0
+claude plugin marketplace add ~/GitHub/alxn0/toolshed
+claude plugin install relay@toolshed
 ```
 
-Check the layout with `claude plugin validate .`.
+Check the layout with `claude plugin validate .` (marketplace) or
+`claude plugin validate plugins/<plugin>`.

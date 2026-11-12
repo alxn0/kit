@@ -1,5 +1,10 @@
 {
-  "name": "alxn0",
+  "name": "toolshed",
+  "description": "Shared Claude Code utilities: session relay, session modes, coding conventions.",
   "owner": { "name": "alxn0" },
-  "plugins": [{ "name": "kit", "source": "./" }]
+  "plugins": [
+    { "name": "relay", "source": "./plugins/relay" },
+    { "name": "modes", "source": "./plugins/modes" },
+    { "name": "coding", "source": "./plugins/coding" }
+  ]
 }

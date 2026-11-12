@@ -1,0 +1,7 @@
+{
+  "name": "coding",
+  "description": "Language and coding conventions: python.",
+  "author": { "name": "alxn0" },
+  "repository": "https://github.com/alxn0/toolshed",
+  "license": "MIT"
+}

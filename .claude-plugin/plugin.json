@@ -1,7 +1,0 @@
-{
-  "name": "kit",
-  "description": "alxn0's reusable Claude Code skills: chat, go, handoff, inbox, python, wait, whereami.",
-  "author": { "name": "alxn0" },
-  "repository": "https://github.com/alxn0/kit",
-  "license": "MIT"
-}

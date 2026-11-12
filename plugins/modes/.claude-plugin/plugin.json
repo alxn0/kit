@@ -1,0 +1,7 @@
+{
+  "name": "modes",
+  "description": "Set how far Claude goes in a session: chat (discuss), wait (plan first), go (finish).",
+  "author": { "name": "alxn0" },
+  "repository": "https://github.com/alxn0/toolshed",
+  "license": "MIT"
+}
