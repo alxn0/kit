@@ -7,6 +7,7 @@ A shared Claude Code plugin marketplace of small utilities. Enable only the plug
 | `relay` | `handoff` | `/handoff <target>` | Draft a self-contained brief of the session, approve it, copy it to `<target>:inbox/`, or with `--local` stage it in `~/send/` for the receiver to pull |
 | | `inbox` | `/inbox` | Plan and do a received brief with approval, then delete it or queue what is left |
 | | `whereami` | `/whereami` | Print `user@host:cwd` of the session |
+| | `spawn` | `/spawn <folder>` | Start Claude with Remote Control in a detached tmux session in a folder (path, or a word resolved via `z` then `find`, approved by you) |
 | `modes` | `chat` | `/chat` | Read-only discussion mode: read files, search the web, no code changes |
 | | `wait` | `/wait` | Present a plan and wait for confirmation before implementing |
 | | `go` | `/go` | Finisher: simplify, test end-to-end, code-review. No commit |
